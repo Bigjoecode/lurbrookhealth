@@ -61,6 +61,7 @@ function seed_database(PDO $db, array $config): void {
         'site_name'=>'Lurbrook Health LTD', 'email'=>'contact@lurbrookhealthltd.com',
         'phone'=>'+44 7961 076672', 'announcement'=>'Free UK delivery on orders over £75',
         'paypal_client_id'=>$config['paypal_client_id'], 'paypal_secret'=>$config['paypal_secret'], 'paypal_mode'=>$config['paypal_mode'],
+        'assistant_enabled'=>'1', 'openai_api_key'=>$config['openai_api_key'], 'openai_model'=>$config['openai_model'],
         'shipping_flat'=>'4.95', 'shipping_free_over'=>'75',
         'hero_title'=>'Healthcare essentials. Delivered with care.',
         'hero_text'=>'Quality PPE, healthcare consumables and medical equipment for organisations, businesses and homes across the UK.'

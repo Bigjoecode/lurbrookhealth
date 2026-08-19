@@ -26,6 +26,10 @@ Default development administrator:
 
 Set the `ADMIN_EMAIL` and `ADMIN_PASSWORD` environment variables in production. Do not deploy with the development password.
 
+## Lurbrook Health Assistant
+
+The storefront includes a product-aware shopping assistant with product recommendations, add-to-bag actions, checkout guidance, policy answers and an enquiry form. It works with a built-in catalogue and policy fallback. For conversational AI responses, set `OPENAI_API_KEY` on the server or add the key under **Admin → Settings**. The default model is `gpt-5.4-nano` and can be changed with `OPENAI_MODEL` or in the same settings screen. API credentials are used only by the PHP backend and are never exposed to storefront JavaScript.
+
 ## PayPal
 
 In **Admin → Settings**, add the client ID and secret from a PayPal Business REST application. Keep the environment set to **Sandbox** while testing, then use live credentials and switch to **Live payments** for production.

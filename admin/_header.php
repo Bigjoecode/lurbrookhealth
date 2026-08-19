@@ -11,7 +11,7 @@
 <body>
 <div class="admin-shell">
   <aside class="admin-sidebar">
-    <div class="admin-logo"><a class="admin-logo-link" href="<?= url('admin/') ?>"><img src="<?= url('assets/img/logo.png') ?>" alt="Lurbrook Health"><span>Store admin</span></a><button class="sidebar-close" type="button" aria-label="Close admin navigation">X</button></div>
+    <div class="admin-logo"><a class="admin-logo-link" href="<?= url('admin/') ?>"><img src="<?= url('assets/img/logo.png') ?>" alt="Lurbrook Health"></a><button class="sidebar-close" type="button" aria-label="Close admin navigation">X</button></div>
     <nav>
       <small>Workspace</small>
       <a class="<?= $section==='dashboard'?'active':'' ?>" href="<?= url('admin/') ?>"><i>◫</i>Overview</a>

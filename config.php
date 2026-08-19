@@ -9,5 +9,6 @@ return [
     'paypal_client_id' => getenv('PAYPAL_CLIENT_ID') ?: '',
     'paypal_secret' => getenv('PAYPAL_SECRET') ?: '',
     'paypal_mode' => getenv('PAYPAL_MODE') ?: 'sandbox',
+    'openai_api_key' => getenv('OPENAI_API_KEY') ?: '',
+    'openai_model' => getenv('OPENAI_MODEL') ?: 'gpt-5.4-nano',
 ];
-
