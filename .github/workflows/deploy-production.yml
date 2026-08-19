@@ -90,6 +90,7 @@ jobs:
         run: |
           set -euo pipefail
           umask 077
+          trap 'rm -f "$HOME/.netrc" /tmp/lurbrook-deploy.lftp' EXIT
           printf 'machine %s\nlogin %s\npassword %s\n' "$FTPS_HOST" "$FTPS_USERNAME" "$FTPS_PASSWORD" > "$HOME/.netrc"
           cat > /tmp/lurbrook-deploy.lftp <<LFTP
           set cmd:fail-exit yes
@@ -103,8 +104,19 @@ jobs:
           mirror --reverse --verbose=1 --parallel=3 --no-perms _deploy/ "$FTPS_REMOTE_DIR"
           bye
           LFTP
-          lftp -f /tmp/lurbrook-deploy.lftp
-          rm -f "$HOME/.netrc" /tmp/lurbrook-deploy.lftp
+          set +e
+          ftps_output=$(lftp -f /tmp/lurbrook-deploy.lftp 2>&1)
+          ftps_status=$?
+          set -e
+          if [ "$ftps_status" -ne 0 ]; then
+            printf '%s\n' "$ftps_output"
+            diagnostic=$(printf '%s' "$ftps_output" | tail -c 1500)
+            diagnostic=${diagnostic//'%'/'%25'}
+            diagnostic=${diagnostic//$'\r'/'%0D'}
+            diagnostic=${diagnostic//$'\n'/'%0A'}
+            echo "::error title=FTPS upload failed::$diagnostic"
+            exit "$ftps_status"
+          fi
 
       - name: Verify production website
         shell: bash
