@@ -2,7 +2,11 @@
   const toast = document.querySelector('#toast');
   const showToast = message => { if (!toast) return; toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2600); };
   document.querySelector('.menu-toggle')?.addEventListener('click', e => {
-    const nav = document.querySelector('.main-nav'); nav.classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded', nav.classList.contains('open'));
+    const nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+    const isOpen = nav.classList.contains('open');
+    e.currentTarget.setAttribute('aria-expanded', String(isOpen));
+    e.currentTarget.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
   });
   document.querySelector('.category-menu > button')?.addEventListener('click', e => e.currentTarget.parentElement.classList.toggle('open'));
   document.addEventListener('click', async e => {

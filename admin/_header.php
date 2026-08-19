@@ -24,7 +24,7 @@
       <a class="<?= $section==='pages'?'active':'' ?>" href="<?= url('admin/?view=pages') ?>"><i>▧</i>Pages</a>
       <a class="<?= $section==='settings'?'active':'' ?>" href="<?= url('admin/?view=settings') ?>"><i>⚙</i>Settings</a>
     </nav>
-    <div class="sidebar-footer"><a href="<?= url() ?>" target="_blank">View storefront ↗</a><a href="<?= url('admin/logout.php') ?>">Sign out</a></div>
+    <div class="sidebar-footer"><a href="<?= url() ?>" target="_blank">View storefront ↗</a><a href="<?= url('admin/logout') ?>">Sign out</a></div>
   </aside>
   <div class="admin-main">
     <header class="admin-top"><button class="sidebar-toggle" type="button" aria-label="Open admin navigation">☰</button><div><span><?= date('l, j F Y') ?></span></div><div class="admin-user"><span>LH</span><div><strong>Administrator</strong><small><?= e($_SESSION['admin']['email']) ?></small></div></div></header>

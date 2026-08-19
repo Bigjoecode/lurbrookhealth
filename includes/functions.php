@@ -29,7 +29,7 @@ function redirect(string $path): never { header('Location: ' . url($path)); exit
 function flash(string $type, string $message): void { $_SESSION['flash'] = [$type, $message]; }
 function pull_flash(): ?array { $v = $_SESSION['flash'] ?? null; unset($_SESSION['flash']); return $v; }
 function is_admin(): bool { return !empty($_SESSION['admin']); }
-function require_admin(): void { if (!is_admin()) redirect('admin/login.php'); }
+function require_admin(): void { if (!is_admin()) redirect('admin/login'); }
 function slugify(string $value): string {
     $value = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $value), '-'));
     return $value ?: 'item-' . time();

@@ -25,7 +25,10 @@ $flash = pull_flash();
       <a class="brand" href="<?= url() ?>" aria-label="Lurbrook Health home"><img src="<?= url('assets/img/logo.png') ?>" alt="Lurbrook Health LTD"></a>
       <form class="search" action="<?= url('shop') ?>" method="get"><label class="sr-only" for="q">Search products</label><input id="q" name="q" value="<?= e($_GET['q'] ?? '') ?>" placeholder="Search thermometers, masks, monitors…"><button type="submit" aria-label="Search">⌕</button></form>
       <div class="header-actions"><a href="tel:+447961076672"><small>Need help?</small><strong><?= e(setting('phone')) ?></strong></a><a class="cart-link" href="<?= url('cart') ?>"><span>Bag</span><b data-cart-count><?= cart_count() ?></b></a></div>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
+        <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="sr-only">Menu</span>
+      </button>
     </div>
     <nav id="main-nav" class="main-nav" aria-label="Primary navigation"><div class="container nav-inner">
       <div class="category-menu"><button type="button">Shop categories <span>⌄</span></button><div class="category-dropdown"><?php foreach($categories as $cat): ?><a href="<?= url('shop?category=' . urlencode($cat['category'])) ?>"><span><?= e($cat['category']) ?></span><small><?= (int)$cat['total'] ?> products</small></a><?php endforeach; ?></div></div>
