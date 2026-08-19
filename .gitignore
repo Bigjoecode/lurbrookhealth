@@ -1,4 +1,5 @@
 /data/*.sqlite
+/data/production-config.php
 /data/sessions/
 /uploads/*
 !/uploads/.gitkeep

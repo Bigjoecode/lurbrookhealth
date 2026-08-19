@@ -44,3 +44,21 @@ The PHP/Apache user needs write access to:
 - `uploads/` for administrator product images
 
 Both runtime locations are excluded from Git.
+
+## Automatic production deployment
+
+The `Deploy production via FTPS` GitHub Actions workflow uploads each push to `main` over explicit FTPS on port 21. It is gated by the `FTPS_DEPLOY_ENABLED` repository variable, so no deployment runs until production credentials are configured.
+
+Create these GitHub Actions repository secrets:
+
+- `FTPS_USERNAME` — preferably a dedicated FTP account restricted to the addon-domain directory
+- `FTPS_PASSWORD`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD` — at least 16 characters and different from the development password
+
+Create these repository variables:
+
+- `FTPS_REMOTE_DIR` — `/` for a dedicated FTP account rooted at the addon domain, or `/lurbrookhealthltd.com` for the main cPanel FTP account
+- `FTPS_DEPLOY_ENABLED` — set to `true` only after the secrets and remote directory are confirmed
+
+The workflow verifies the FTPS certificate, uploads without remote deletion, preserves the live SQLite database, sessions and product uploads, writes the production administrator credentials to the server-protected `data/production-config.php`, and checks the live HTTPS homepage after deployment.
