@@ -51,7 +51,6 @@ The `Deploy production via FTPS` GitHub Actions workflow uploads each push to `m
 
 Create these GitHub Actions repository secrets:
 
-- `FTPS_USERNAME` — preferably a dedicated FTP account restricted to the addon-domain directory
 - `FTPS_PASSWORD`
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD` — at least 16 characters and different from the development password
@@ -62,3 +61,5 @@ Create these repository variables:
 - `FTPS_DEPLOY_ENABLED` — set to `true` only after the secrets and remote directory are confirmed
 
 The workflow verifies the FTPS certificate, uploads without remote deletion, preserves the live SQLite database, sessions and product uploads, writes the production administrator credentials to the server-protected `data/production-config.php`, and checks the live HTTPS homepage after deployment.
+
+The configured deployment account is `lurbrook@lurbrookhealthltd.com` on `ftp.globalaffairs.uk:21` and should remain restricted to the addon-domain document root.
