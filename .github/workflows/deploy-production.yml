@@ -91,7 +91,19 @@ jobs:
           set -euo pipefail
           umask 077
           trap 'rm -f "$HOME/.netrc" /tmp/lurbrook-deploy.lftp' EXIT
-          printf 'machine %s\nlogin %s\npassword %s\n' "$FTPS_HOST" "$FTPS_USERNAME" "$FTPS_PASSWORD" > "$HOME/.netrc"
+          netrc_quote() {
+            local value="$1"
+            value="${value//\\/\\\\}"
+            value="${value//\"/\\\"}"
+            printf '"%s"' "$value"
+          }
+          {
+            printf 'machine %s\nlogin ' "$FTPS_HOST"
+            netrc_quote "$FTPS_USERNAME"
+            printf '\npassword '
+            netrc_quote "$FTPS_PASSWORD"
+            printf '\n'
+          } > "$HOME/.netrc"
           cat > /tmp/lurbrook-deploy.lftp <<LFTP
           set cmd:fail-exit yes
           set net:max-retries 2
