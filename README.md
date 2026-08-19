@@ -55,6 +55,8 @@ Create these GitHub Actions repository secrets:
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD` — at least 16 characters and different from the development password
 
+Configure these as repository-level secrets. The workflow deliberately does not bind to a GitHub Environment, preventing an older environment-level secret from overriding the current FTP password.
+
 Create these repository variables:
 
 - `FTPS_REMOTE_DIR` — `/` for a dedicated FTP account rooted at the addon domain, or `/lurbrookhealthltd.com` for the main cPanel FTP account

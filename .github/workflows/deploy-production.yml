@@ -16,7 +16,6 @@ jobs:
   deploy:
     if: ${{ vars.FTPS_DEPLOY_ENABLED == 'true' }}
     runs-on: ubuntu-latest
-    environment: production
     env:
       FTPS_HOST: ngvip4.afeeshost.com
       FTPS_PORT: "21"
