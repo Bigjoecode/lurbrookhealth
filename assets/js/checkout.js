@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch(window.LURBROOK.base + '/paypal.php?action=capture',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error(result.message || 'The payment could not be confirmed.');
-      window.location.href = window.LURBROOK.base + '/order-success.php?order=' + encodeURIComponent(result.order_number);
+      window.location.href = window.LURBROOK.base + '/order-confirmed?order=' + encodeURIComponent(result.order_number);
     },
     onCancel: () => showError('Payment was cancelled. Your shopping bag has not been changed.'),
     onError: error => showError(error.message || 'PayPal could not process the payment. Please try again.')
   }).render('#paypal-button-container');
 });
-

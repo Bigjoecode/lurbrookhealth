@@ -2,6 +2,7 @@ body { overflow-x: hidden; }
 .hero-copy { min-width: 0; }
 
 @media (max-width: 740px) {
+  .container { width: calc(100% - 28px); max-width: none; }
   .header-main {
     height: auto;
     min-height: 78px;
@@ -11,11 +12,12 @@ body { overflow-x: hidden; }
   }
   .brand { grid-column: 1; grid-row: 1; }
   .header-actions { grid-column: 2; grid-row: 1; }
+  .header-actions { justify-self: end; min-width: 58px; }
   .header-actions .cart-link { display: flex; }
   .menu-toggle { grid-column: 1 / -1; grid-row: 2; width: 100%; }
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-copy,
-  .hero-media { width: 100%; max-width: 100%; min-width: 0; }
+  .hero-media { width: 100%; max-width: calc(100vw - 28px); min-width: 0; }
   .hero-copy h1,
   .hero-copy p { max-width: 100%; overflow-wrap: break-word; }
 }

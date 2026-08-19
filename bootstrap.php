@@ -10,6 +10,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 $config = require __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/includes/migrations.php';
 
 if (!is_dir(dirname($config['db_path']))) {
     mkdir(dirname($config['db_path']), 0775, true);
@@ -84,3 +85,4 @@ CREATE TABLE IF NOT EXISTS messages (
 SQL);
 
 seed_database($db, $config);
+run_migrations($db);

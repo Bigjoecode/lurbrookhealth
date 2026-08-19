@@ -8,5 +8,4 @@ if(!$product){http_response_code(404);echo json_encode(['message'=>'Product is u
 $_SESSION['cart']=$_SESSION['cart']??[];
 if(($_POST['action']??'add')==='remove'){unset($_SESSION['cart'][$id]);}
 else{$_SESSION['cart'][$id]=min((int)$product['stock'],($_POST['action']??'add')==='set'?$qty:(int)($_SESSION['cart'][$id]??0)+$qty);if($_SESSION['cart'][$id]<1)unset($_SESSION['cart'][$id]);}
-echo json_encode(['ok'=>true,'count'=>cart_count(),'message'=>($product['name'].' added to your bag.')]);
-
+echo json_encode(['ok'=>true,'count'=>cart_count(),'product_name'=>$product['name'],'message'=>($product['name'].' added to your bag.')]);

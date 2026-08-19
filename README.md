@@ -8,9 +8,10 @@ A responsive PHP 8.2 storefront and administration dashboard for Lurbrook Health
 - Product catalogue, category filters, search, product details and responsive shopping bag
 - Server-created and server-captured PayPal checkout in GBP
 - Stock reduction and order recording after verified PayPal payment
-- Admin dashboard for products, images, inventory, orders, enquiries, pages and site settings
+- Admin dashboard for products, categories, images, inventory, orders, customer reviews, enquiries, pages and site settings
 - Editable delivery thresholds, homepage copy and PayPal sandbox/live configuration
 - Local contact enquiry inbox, CSRF protection, secure sessions and validated uploads
+- Clean public URLs, multi-image product galleries, FAQ and full policy pages
 
 ## Local setup
 

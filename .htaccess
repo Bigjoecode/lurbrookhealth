@@ -7,5 +7,15 @@ DirectoryIndex index.php
 
 RewriteEngine On
 RewriteRule ^(?:data|includes)/ - [F,L]
+RewriteCond %{THE_REQUEST} \s/+(.*/)?(shop|cart|checkout|contact)\.php[\s?] [NC]
+RewriteRule ^ /%1%2 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+(.*/)?order-success\.php[\s?] [NC]
+RewriteRule ^ /%1order-confirmed [R=301,L,NE]
+RewriteRule ^shop/?$ shop.php [L,QSA]
+RewriteRule ^cart/?$ cart.php [L,QSA]
+RewriteRule ^checkout/?$ checkout.php [L,QSA]
+RewriteRule ^contact/?$ contact.php [L,QSA]
+RewriteRule ^order-confirmed/?$ order-success.php [L,QSA]
 RewriteRule ^product/([a-z0-9-]+)/?$ product.php?slug=$1 [L,QSA]
 RewriteRule ^page/([a-z0-9-]+)/?$ page.php?slug=$1 [L,QSA]
+RewriteRule ^(about|faq|privacy-policy|terms-and-conditions|returns-refund-policy|shipping-policy|cookies-policy|media-disclaimer)/?$ page.php?slug=$1 [L,QSA]

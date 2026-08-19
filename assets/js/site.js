@@ -15,7 +15,14 @@
       const response = await fetch(window.LURBROOK.base + '/cart-api.php', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body});
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || 'Could not add item');
-      document.querySelectorAll('[data-cart-count]').forEach(el => el.textContent = data.count); showToast(data.message);
+      document.querySelectorAll('[data-cart-count]').forEach(el => el.textContent = data.count);
+      const prompt = document.querySelector('#cart-prompt');
+      if (prompt) {
+        prompt.querySelector('#cart-prompt-product').textContent = data.product_name;
+        prompt.hidden = false;
+        document.body.classList.add('prompt-open');
+        prompt.querySelector('.cart-prompt-close')?.focus();
+      } else { showToast(data.message); }
     } catch (error) { showToast(error.message); }
     finally { button.disabled = false; }
   });
@@ -23,4 +30,18 @@
     const input = document.querySelector('#product-quantity'); if (!input) return;
     input.value = Math.max(1, Math.min(Number(input.max || 99), Number(input.value) + Number(button.dataset.qty)));
   }));
+  document.querySelectorAll('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
+    const main = document.querySelector('#product-main-photo');
+    if (main) main.src = button.dataset.gallerySrc;
+    document.querySelectorAll('[data-gallery-src]').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+  }));
+  document.querySelectorAll('[data-close-cart-prompt]').forEach(button => button.addEventListener('click', () => {
+    const prompt = document.querySelector('#cart-prompt');
+    if (prompt) prompt.hidden = true;
+    document.body.classList.remove('prompt-open');
+  }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') document.querySelector('[data-close-cart-prompt]')?.click();
+  });
 })();
