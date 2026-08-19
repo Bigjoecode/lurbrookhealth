@@ -63,7 +63,7 @@ function seed_database(PDO $db, array $config): void {
         'paypal_client_id'=>$config['paypal_client_id'], 'paypal_secret'=>$config['paypal_secret'], 'paypal_mode'=>$config['paypal_mode'],
         'assistant_enabled'=>'1', 'openai_api_key'=>$config['openai_api_key'], 'openai_model'=>$config['openai_model'],
         'shipping_flat'=>'4.95', 'shipping_free_over'=>'75',
-        'hero_title'=>'Healthcare essentials. Delivered with care.',
+        'hero_title'=>'Trusted Medical Supplies, Delivered with care',
         'hero_text'=>'Quality PPE, healthcare consumables and medical equipment for organisations, businesses and homes across the UK.'
     ];
     $stmt = $db->prepare('INSERT OR IGNORE INTO settings(setting_key, setting_value) VALUES(?, ?)');

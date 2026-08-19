@@ -49,7 +49,7 @@
     const slides = [...slider.querySelectorAll('[data-hero-slide]')];
     const dots = [...slider.querySelectorAll('[data-hero-dot]')];
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const interval = 6500;
+    const interval = 5000;
     let current = 0;
     let timer;
     let touchStart = 0;

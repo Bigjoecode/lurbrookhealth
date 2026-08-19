@@ -23,6 +23,14 @@ function run_migrations(PDO $db): void
     $applied = array_map('intval', $db->query('SELECT version FROM schema_migrations')->fetchAll(PDO::FETCH_COLUMN));
     if (!in_array(2, $applied, true)) migrate_catalogue_and_content($db);
     if (!in_array(3, $applied, true)) migrate_payment_copy_and_gallery($db);
+    if (!in_array(4, $applied, true)) migrate_homepage_headline($db);
+}
+
+function migrate_homepage_headline(PDO $db): void
+{
+    $stmt = $db->prepare('UPDATE settings SET setting_value=? WHERE setting_key=? AND setting_value=?');
+    $stmt->execute(['Trusted Medical Supplies, Delivered with care','hero_title','Healthcare essentials. Delivered with care.']);
+    $db->exec('INSERT INTO schema_migrations(version) VALUES(4)');
 }
 
 function migrate_catalogue_and_content(PDO $db): void
