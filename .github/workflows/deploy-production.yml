@@ -28,20 +28,32 @@ jobs:
 
     steps:
       - name: Check out release
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate deployment configuration
         shell: bash
         run: |
           set -euo pipefail
-          test -n "$FTPS_USERNAME" || { echo "FTPS_USERNAME is not configured"; exit 1; }
-          test -n "$FTPS_PASSWORD" || { echo "FTPS_PASSWORD is not configured"; exit 1; }
-          test -n "$ADMIN_EMAIL" || { echo "ADMIN_EMAIL is not configured"; exit 1; }
-          test -n "$ADMIN_PASSWORD" || { echo "ADMIN_PASSWORD is not configured"; exit 1; }
-          test ${#ADMIN_PASSWORD} -ge 16 || { echo "ADMIN_PASSWORD must contain at least 16 characters"; exit 1; }
-          test -n "$FTPS_REMOTE_DIR" || { echo "FTPS_REMOTE_DIR is not configured"; exit 1; }
-          [[ "$FTPS_REMOTE_DIR" =~ ^/[A-Za-z0-9._/-]*$ ]] || { echo "FTPS_REMOTE_DIR contains unsupported characters"; exit 1; }
-          [[ "$FTPS_REMOTE_DIR" != *".."* ]] || { echo "FTPS_REMOTE_DIR cannot contain .."; exit 1; }
+          invalid=0
+          for name in FTPS_USERNAME FTPS_PASSWORD ADMIN_EMAIL ADMIN_PASSWORD FTPS_REMOTE_DIR; do
+            if [ -z "${!name}" ]; then
+              echo "::error title=Missing deployment setting::$name is not configured in the repository."
+              invalid=1
+            fi
+          done
+          if [ -n "$ADMIN_PASSWORD" ] && [ ${#ADMIN_PASSWORD} -lt 16 ]; then
+            echo "::error title=Invalid administrator password::ADMIN_PASSWORD must contain at least 16 characters."
+            invalid=1
+          fi
+          if [ -n "$FTPS_REMOTE_DIR" ] && [[ ! "$FTPS_REMOTE_DIR" =~ ^/[A-Za-z0-9._/-]*$ ]]; then
+            echo "::error title=Invalid remote directory::FTPS_REMOTE_DIR contains unsupported characters."
+            invalid=1
+          fi
+          if [[ "$FTPS_REMOTE_DIR" == *".."* ]]; then
+            echo "::error title=Invalid remote directory::FTPS_REMOTE_DIR cannot contain two consecutive dots."
+            invalid=1
+          fi
+          exit "$invalid"
 
       - name: Build production package
         shell: bash
