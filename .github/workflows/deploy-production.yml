@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      FTPS_HOST: ftp.globalaffairs.uk
+      FTPS_HOST: ngvip4.afeeshost.com
       FTPS_PORT: "21"
       FTPS_USERNAME: lurbrook@lurbrookhealthltd.com
       FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}

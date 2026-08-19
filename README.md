@@ -62,4 +62,4 @@ Create these repository variables:
 
 The workflow verifies the FTPS certificate, uploads without remote deletion, preserves the live SQLite database, sessions and product uploads, writes the production administrator credentials to the server-protected `data/production-config.php`, and checks the live HTTPS homepage after deployment.
 
-The configured deployment account is `lurbrook@lurbrookhealthltd.com` on `ftp.globalaffairs.uk:21` and should remain restricted to the addon-domain document root.
+The configured deployment account is `lurbrook@lurbrookhealthltd.com` on `ngvip4.afeeshost.com:21` and should remain restricted to the addon-domain document root. The hosting-panel label `ftp.globalaffairs.uk` currently has no public DNS record, so the server hostname is used for FTPS.
