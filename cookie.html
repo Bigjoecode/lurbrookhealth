@@ -1,0 +1,151 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Cookie Policy
+     Paste this whole block into an Elementor "HTML" widget.
+     All styles are scoped to .lb-cookie so nothing leaks
+     into the theme. Fonts are inherited from your Elementor
+     global typography.
+     ============================================================ -->
+
+<div class="lb-cookie">
+
+  <span class="lb-updated">Last updated: 5 August 2026</span>
+
+  <p class="lb-lead">Our website uses cookies to improve your browsing experience.</p>
+
+  <h2 class="lb-h2">Cookies help us</h2>
+  <ul class="lb-list">
+    <li>Remember your preferences</li>
+    <li>Analyse website traffic</li>
+    <li>Improve website performance</li>
+  </ul>
+
+  <h2 class="lb-h2">Managing cookies</h2>
+  <p class="lb-p">You can manage or disable cookies through your browser settings.</p>
+
+  <div class="lb-notice">
+    <p class="lb-p"><strong>Please note:</strong> disabling cookies through your browser settings may affect how parts of this website perform.</p>
+  </div>
+
+  <p class="lb-contact">
+    Questions about this cookie policy? Contact us at
+    <a href="mailto:contact@lurbrookhealthltd.com">contact@lurbrookhealthltd.com</a>
+    or call <a href="tel:+447961076672">+44 7961 076672</a>.
+  </p>
+
+</div>
+
+<style>
+/* Scoped to .lb-cookie - safe to paste alongside any theme */
+.lb-cookie{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-mist:#D9E5E5;
+  --lb-ink:#2A3441;
+  --lb-muted:#5F6B7A;
+  --lb-line:#E3EAEA;
+
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--lb-ink);
+  background:#fff;
+  border:1px solid var(--lb-line);
+  border-radius:14px;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:0 2px 24px rgba(21,37,66,.05);
+}
+.lb-cookie *{box-sizing:border-box;}
+
+.lb-cookie .lb-updated{
+  display:inline-block;
+  font-size:13px;
+  line-height:1.4;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lb-teal-dark);
+  background:rgba(20,176,182,.09);
+  border:1px solid rgba(20,176,182,.28);
+  border-radius:999px;
+  padding:5px 14px;
+  margin:0 0 26px;
+}
+
+.lb-cookie .lb-lead{
+  font-size:18.5px;
+  color:var(--lb-navy);
+  margin:0 0 8px;
+}
+
+.lb-cookie .lb-h2{
+  font-family:inherit;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--lb-navy);
+  margin:36px 0 12px;
+  padding:0 0 10px;
+  border-bottom:2px solid var(--lb-mist);
+  letter-spacing:-.01em;
+  text-transform:none;
+}
+
+.lb-cookie .lb-p{
+  margin:0 0 16px;
+  color:var(--lb-ink);
+}
+.lb-cookie .lb-p:last-child{margin-bottom:0;}
+
+.lb-cookie .lb-list{
+  list-style:none;
+  margin:0 0 16px;
+  padding:0;
+}
+.lb-cookie .lb-list li{
+  position:relative;
+  margin:0 0 10px;
+  padding:0 0 0 30px;
+  color:var(--lb-ink);
+}
+.lb-cookie .lb-list li:last-child{margin-bottom:0;}
+.lb-cookie .lb-list li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:.62em;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--lb-teal);
+  box-shadow:0 0 0 4px rgba(20,176,182,.15);
+}
+
+.lb-cookie .lb-notice{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:28px 0 0;
+}
+.lb-cookie .lb-notice strong{color:var(--lb-navy);}
+
+.lb-cookie .lb-contact{
+  margin:36px 0 0;
+  padding:26px 0 0;
+  border-top:1px solid var(--lb-line);
+  font-size:15.5px;
+  color:var(--lb-muted);
+}
+.lb-cookie .lb-contact a{
+  color:var(--lb-teal-dark);
+  font-weight:600;
+  text-decoration:none;
+}
+.lb-cookie .lb-contact a:hover{text-decoration:underline;}
+
+@media (max-width:640px){
+  .lb-cookie{font-size:16px;border-radius:10px;}
+  .lb-cookie .lb-lead{font-size:17.5px;}
+  .lb-cookie .lb-h2{font-size:19px;margin-top:30px;}
+}
+</style>

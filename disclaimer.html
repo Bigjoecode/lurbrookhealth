@@ -1,0 +1,126 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Disclaimer
+     Paste this whole block into an Elementor "HTML" widget.
+     All styles are scoped to .lb-disclaimer so nothing leaks
+     into the theme. Fonts are inherited from your Elementor
+     global typography.
+     ============================================================ -->
+
+<div class="lb-disclaimer">
+
+  <span class="lb-updated">Last updated: 5 August 2026</span>
+
+  <p class="lb-lead">Please read this disclaimer carefully before using our products or relying on any information published on this website.</p>
+
+  <h2 class="lb-h2">Use of our products</h2>
+  <p class="lb-p">Products supplied by Lurbrook Health LTD should always be used in accordance with the manufacturer's instructions.</p>
+
+  <h2 class="lb-h2">Information on this website</h2>
+  <p class="lb-p">Information provided on this website is for general information only and should not be considered medical advice.</p>
+
+  <h2 class="lb-h2">Seeking medical advice</h2>
+  <p class="lb-p">If you require medical advice, please consult a qualified healthcare professional.</p>
+
+  <div class="lb-notice">
+    <p class="lb-p"><strong>In summary:</strong> follow the manufacturer's instructions supplied with every product, treat the content of this website as general information only, and speak to a qualified healthcare professional whenever you need medical advice.</p>
+  </div>
+
+  <p class="lb-contact">
+    Questions about this disclaimer? Contact us at
+    <a href="mailto:contact@lurbrookhealthltd.com">contact@lurbrookhealthltd.com</a>
+    or call <a href="tel:+447961076672">+44 7961 076672</a>.
+  </p>
+
+</div>
+
+<style>
+/* Scoped to .lb-disclaimer - safe to paste alongside any theme */
+.lb-disclaimer{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-mist:#D9E5E5;
+  --lb-ink:#2A3441;
+  --lb-muted:#5F6B7A;
+  --lb-line:#E3EAEA;
+
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--lb-ink);
+  background:#fff;
+  border:1px solid var(--lb-line);
+  border-radius:14px;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:0 2px 24px rgba(21,37,66,.05);
+}
+.lb-disclaimer *{box-sizing:border-box;}
+
+.lb-disclaimer .lb-updated{
+  display:inline-block;
+  font-size:13px;
+  line-height:1.4;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lb-teal-dark);
+  background:rgba(20,176,182,.09);
+  border:1px solid rgba(20,176,182,.28);
+  border-radius:999px;
+  padding:5px 14px;
+  margin:0 0 26px;
+}
+
+.lb-disclaimer .lb-lead{
+  font-size:18.5px;
+  color:var(--lb-navy);
+  margin:0 0 8px;
+}
+
+.lb-disclaimer .lb-h2{
+  font-family:inherit;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--lb-navy);
+  margin:36px 0 12px;
+  padding:0 0 10px;
+  border-bottom:2px solid var(--lb-mist);
+  letter-spacing:-.01em;
+  text-transform:none;
+}
+
+.lb-disclaimer .lb-p{
+  margin:0 0 16px;
+  color:var(--lb-ink);
+}
+.lb-disclaimer .lb-p:last-child{margin-bottom:0;}
+
+.lb-disclaimer .lb-notice{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:28px 0 0;
+}
+.lb-disclaimer .lb-notice strong{color:var(--lb-navy);}
+
+.lb-disclaimer .lb-contact{
+  margin:36px 0 0;
+  padding:26px 0 0;
+  border-top:1px solid var(--lb-line);
+  font-size:15.5px;
+  color:var(--lb-muted);
+}
+.lb-disclaimer .lb-contact a{
+  color:var(--lb-teal-dark);
+  font-weight:600;
+  text-decoration:none;
+}
+.lb-disclaimer .lb-contact a:hover{text-decoration:underline;}
+
+@media (max-width:640px){
+  .lb-disclaimer{font-size:16px;border-radius:10px;}
+  .lb-disclaimer .lb-lead{font-size:17.5px;}
+  .lb-disclaimer .lb-h2{font-size:19px;margin-top:30px;}
+}
+</style>

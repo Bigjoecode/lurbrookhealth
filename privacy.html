@@ -1,0 +1,247 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Privacy Policy
+     Paste this whole block into an Elementor "HTML" widget.
+     All styles are scoped to .lb-privacy so nothing leaks
+     into the theme. Fonts are inherited from your Elementor
+     global typography.
+     ============================================================ -->
+
+<div class="lb-privacy">
+
+  <span class="lb-updated">Effective date: 22 July 2026</span>
+
+  <p class="lb-lead">At Lurbrook Health LTD, we are committed to protecting your privacy and handling your personal information responsibly.</p>
+
+  <nav class="lb-toc" aria-label="On this page">
+    <span class="lb-toc-title">On this page</span>
+    <ol class="lb-toc-list">
+      <li><a href="#lb-collect">Information We Collect</a></li>
+      <li><a href="#lb-use">How We Use Your Information</a></li>
+      <li><a href="#lb-sharing">Sharing Your Information</a></li>
+      <li><a href="#lb-security">Data Security</a></li>
+      <li><a href="#lb-rights">Your Rights</a></li>
+      <li><a href="#lb-contact-us">Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 class="lb-h2" id="lb-collect">Information We Collect</h2>
+  <p class="lb-p">When you use our website or place an order, we may collect:</p>
+  <ul class="lb-list">
+    <li>Your name</li>
+    <li>Billing and delivery address</li>
+    <li>Email address</li>
+    <li>Telephone number</li>
+    <li>Payment details (processed securely through Stripe, PayPal or your card provider)</li>
+    <li>Order history</li>
+    <li>Website usage information through cookies</li>
+  </ul>
+
+  <h2 class="lb-h2" id="lb-use">How We Use Your Information</h2>
+  <p class="lb-p">We use your information to:</p>
+  <ul class="lb-list">
+    <li>Process and deliver your orders</li>
+    <li>Respond to enquiries</li>
+    <li>Process payments</li>
+    <li>Improve our website and services</li>
+    <li>Comply with legal obligations</li>
+    <li>Send marketing emails where you have given consent</li>
+  </ul>
+
+  <h2 class="lb-h2" id="lb-sharing">Sharing Your Information</h2>
+  <p class="lb-p">We only share your information with trusted third parties where necessary, including payment providers, delivery companies and service providers who help us operate our business.</p>
+  <p class="lb-p"><strong>We do not sell your personal information.</strong></p>
+
+  <h2 class="lb-h2" id="lb-security">Data Security</h2>
+  <p class="lb-p">We use appropriate security measures to protect your personal information from unauthorised access or misuse.</p>
+
+  <h2 class="lb-h2" id="lb-rights">Your Rights</h2>
+  <p class="lb-p">Under UK data protection law, you have the right to request access to your personal information, ask for corrections or request deletion where applicable.</p>
+
+  <h2 class="lb-h2" id="lb-contact-us">Contact</h2>
+  <p class="lb-p">For any privacy enquiries, please contact:</p>
+  <div class="lb-contact-card">
+    <span class="lb-contact-name">Lurbrook Health LTD</span>
+    <span class="lb-contact-row">Email: <a href="mailto:lurbrookhealthltd@gmail.com">lurbrookhealthltd@gmail.com</a></span>
+  </div>
+
+</div>
+
+<style>
+/* Scoped to .lb-privacy - safe to paste alongside any theme */
+.lb-privacy{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-mist:#D9E5E5;
+  --lb-ink:#2A3441;
+  --lb-muted:#5F6B7A;
+  --lb-line:#E3EAEA;
+
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--lb-ink);
+  background:#fff;
+  border:1px solid var(--lb-line);
+  border-radius:14px;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:0 2px 24px rgba(21,37,66,.05);
+}
+.lb-privacy *{box-sizing:border-box;}
+
+.lb-privacy .lb-updated{
+  display:inline-block;
+  font-size:13px;
+  line-height:1.4;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lb-teal-dark);
+  background:rgba(20,176,182,.09);
+  border:1px solid rgba(20,176,182,.28);
+  border-radius:999px;
+  padding:5px 14px;
+  margin:0 0 26px;
+}
+
+.lb-privacy .lb-lead{
+  font-size:18.5px;
+  color:var(--lb-navy);
+  margin:0 0 12px;
+}
+
+.lb-privacy .lb-h2{
+  font-family:inherit;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--lb-navy);
+  margin:36px 0 12px;
+  padding:0 0 10px;
+  border-bottom:2px solid var(--lb-mist);
+  letter-spacing:-.01em;
+  text-transform:none;
+  scroll-margin-top:120px; /* clears sticky headers on anchor jumps */
+}
+
+.lb-privacy .lb-p{
+  margin:0 0 16px;
+  color:var(--lb-ink);
+}
+.lb-privacy .lb-p:last-child{margin-bottom:0;}
+.lb-privacy .lb-p strong{color:var(--lb-navy);}
+
+/* ---- Table of contents ---- */
+.lb-privacy .lb-toc{
+  background:#F7FAFA;
+  border:1px solid var(--lb-line);
+  border-radius:12px;
+  padding:22px 26px;
+  margin:26px 0 8px;
+}
+.lb-privacy .lb-toc-title{
+  display:block;
+  font-size:12.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--lb-muted);
+  margin-bottom:12px;
+}
+.lb-privacy .lb-toc-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  counter-reset:lb-toc;
+  columns:2;
+  column-gap:32px;
+}
+.lb-privacy .lb-toc-list li{
+  counter-increment:lb-toc;
+  margin:0 0 7px;
+  break-inside:avoid;
+  font-size:15.5px;
+}
+.lb-privacy .lb-toc-list li::before{
+  content:counter(lb-toc) ".";
+  color:var(--lb-teal);
+  font-weight:700;
+  margin-right:8px;
+}
+.lb-privacy .lb-toc-list a{
+  color:var(--lb-navy);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.lb-privacy .lb-toc-list a:hover{
+  color:var(--lb-teal-dark);
+  border-bottom-color:var(--lb-teal);
+}
+
+/* ---- Bulleted lists ---- */
+.lb-privacy .lb-list{
+  list-style:none;
+  margin:0 0 16px;
+  padding:0;
+}
+.lb-privacy .lb-list li{
+  position:relative;
+  margin:0 0 10px;
+  padding:0 0 0 30px;
+  color:var(--lb-ink);
+}
+.lb-privacy .lb-list li:last-child{margin-bottom:0;}
+.lb-privacy .lb-list li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:.62em;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--lb-teal);
+  box-shadow:0 0 0 4px rgba(20,176,182,.15);
+}
+
+.lb-privacy .lb-notice{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:28px 0 0;
+}
+.lb-privacy .lb-notice strong{color:var(--lb-navy);}
+
+/* ---- Contact card ---- */
+.lb-privacy .lb-contact-card{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:4px 0 0;
+}
+.lb-privacy .lb-contact-name{
+  display:block;
+  font-weight:700;
+  color:var(--lb-navy);
+  margin-bottom:4px;
+}
+.lb-privacy .lb-contact-row{
+  display:block;
+  color:var(--lb-muted);
+  font-size:15.5px;
+}
+.lb-privacy .lb-contact-row a{
+  color:var(--lb-teal-dark);
+  font-weight:600;
+  text-decoration:none;
+}
+.lb-privacy .lb-contact-row a:hover{text-decoration:underline;}
+
+@media (max-width:640px){
+  .lb-privacy{font-size:16px;border-radius:10px;}
+  .lb-privacy .lb-lead{font-size:17.5px;}
+  .lb-privacy .lb-h2{font-size:19px;margin-top:30px;}
+  .lb-privacy .lb-toc-list{columns:1;}
+  .lb-privacy .lb-toc{padding:18px 20px;}
+}
+</style>

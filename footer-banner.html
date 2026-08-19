@@ -1,0 +1,320 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Footer CTA Banner
+     Paste this whole block into an Elementor "HTML" widget,
+     placed just above the site footer (or in the footer template).
+
+     All styles are scoped to .lb-fbanner so nothing leaks into
+     the theme. Fonts are inherited from your Elementor global
+     typography.
+
+     FULL-WIDTH TIP: if you want the navy band to run edge to
+     edge, set the Elementor Section width to "Full Width" and
+     its padding to 0. The inner content stays centred at
+     1140px on its own.
+     ============================================================ -->
+
+<section class="lb-fbanner">
+
+  <div class="lb-fbanner-inner">
+
+    <!-- ---------- Main CTA row ---------- -->
+    <div class="lb-fbanner-main">
+
+      <div class="lb-fbanner-copy">
+        <span class="lb-fbanner-eyebrow">Wholesale &amp; Retail Supply</span>
+        <h2 class="lb-fbanner-title">Ready to source your healthcare supplies?</h2>
+        <p class="lb-fbanner-sub">Quality PPE, healthcare consumables and medical equipment for businesses, healthcare organisations and consumers across the UK.</p>
+      </div>
+
+      <div class="lb-fbanner-actions">
+        <a class="lb-fbanner-btn lb-fbanner-btn--primary" href="https://www.lurbrookhealthltd.com/shop/">
+          Shop Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h13"/><path d="M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+        <a class="lb-fbanner-btn lb-fbanner-btn--ghost" href="https://www.lurbrookhealthltd.com/contact-us/">
+          Request a Quote
+        </a>
+        <p class="lb-fbanner-call">
+          Or call <a href="tel:+447961076672">+44 7961 076672</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ---------- Trust strip ---------- -->
+    <ul class="lb-fbanner-trust">
+
+      <li class="lb-fbanner-trust-item">
+        <span class="lb-fbanner-ticon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v6c0 4.4-3 7.9-7 9-4-1.1-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <span class="lb-fbanner-tbody">
+          <span class="lb-fbanner-tlabel">Quality assured</span>
+          <span class="lb-fbanner-ttext">Carefully selected suppliers</span>
+        </span>
+      </li>
+
+      <li class="lb-fbanner-trust-item">
+        <span class="lb-fbanner-ticon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 7.5h11v9h-11z"/><path d="M13.5 10.5h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>
+          </svg>
+        </span>
+        <span class="lb-fbanner-tbody">
+          <span class="lb-fbanner-tlabel">UK-wide delivery</span>
+          <span class="lb-fbanner-ttext">Dispatched in 1-2 working days</span>
+        </span>
+      </li>
+
+      <li class="lb-fbanner-trust-item">
+        <span class="lb-fbanner-ticon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="10.5" width="18" height="10.5" rx="2.2"/><path d="M7.5 10.5V7a4.5 4.5 0 019 0v3.5"/>
+          </svg>
+        </span>
+        <span class="lb-fbanner-tbody">
+          <span class="lb-fbanner-tlabel">Secure payment</span>
+          <span class="lb-fbanner-ttext">Visa, Mastercard, PayPal &amp; more</span>
+        </span>
+      </li>
+
+      <li class="lb-fbanner-trust-item">
+        <span class="lb-fbanner-ticon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 13a8 8 0 0116 0"/><rect x="2.5" y="13" width="4" height="6" rx="1.6"/><rect x="17.5" y="13" width="4" height="6" rx="1.6"/><path d="M19.5 19v.6a2.4 2.4 0 01-2.4 2.4H13"/>
+          </svg>
+        </span>
+        <span class="lb-fbanner-tbody">
+          <span class="lb-fbanner-tlabel">Here to help</span>
+          <span class="lb-fbanner-ttext">Talk to our supply team</span>
+        </span>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+<style>
+/* Scoped to .lb-fbanner - safe to paste alongside any theme */
+.lb-fbanner{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-navy-2:#1C3557;
+  --lb-navy-3:#24507A;
+
+  position:relative;
+  overflow:hidden;
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.7;
+  color:#fff;
+  background:linear-gradient(125deg,var(--lb-navy) 0%,var(--lb-navy-2) 55%,var(--lb-navy-3) 125%);
+  padding:clamp(38px,6vw,68px) clamp(20px,5vw,48px);
+}
+.lb-fbanner *{box-sizing:border-box;}
+
+/* Decorative teal glows */
+.lb-fbanner::before,
+.lb-fbanner::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+.lb-fbanner::before{
+  width:520px;height:520px;
+  right:-190px;top:-260px;
+  background:radial-gradient(circle,rgba(20,176,182,.32) 0%,rgba(20,176,182,0) 70%);
+}
+.lb-fbanner::after{
+  width:420px;height:420px;
+  left:-200px;bottom:-240px;
+  background:radial-gradient(circle,rgba(20,176,182,.20) 0%,rgba(20,176,182,0) 70%);
+}
+
+.lb-fbanner-inner{
+  position:relative;
+  z-index:1;
+  max-width:1140px;
+  margin:0 auto;
+}
+
+/* ---------- Main row ---------- */
+.lb-fbanner-main{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:clamp(26px,4vw,56px);
+  align-items:center;
+}
+
+.lb-fbanner-eyebrow{
+  display:inline-block;
+  font-size:12.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--lb-teal);
+  margin-bottom:12px;
+}
+.lb-fbanner-title{
+  font-family:inherit;
+  font-size:clamp(26px,3.8vw,40px);
+  font-weight:700;
+  line-height:1.18;
+  letter-spacing:-.02em;
+  color:#fff;
+  margin:0 0 14px;
+  text-transform:none;
+}
+.lb-fbanner-sub{
+  margin:0;
+  font-size:clamp(16px,1.6vw,17.5px);
+  line-height:1.65;
+  color:rgba(255,255,255,.72);
+  max-width:56ch;
+}
+
+/* ---------- Buttons ---------- */
+.lb-fbanner-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:12px;
+}
+.lb-fbanner-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:inherit;
+  font-size:16.5px;
+  font-weight:700;
+  letter-spacing:.02em;
+  text-align:center;
+  text-decoration:none;
+  border-radius:11px;
+  padding:15px 30px;
+  transition:background .18s ease, color .18s ease, transform .18s ease,
+             box-shadow .18s ease, border-color .18s ease;
+}
+.lb-fbanner-btn svg{width:19px;height:19px;flex:0 0 auto;transition:transform .18s ease;}
+
+.lb-fbanner-btn--primary{
+  color:#fff;
+  background:var(--lb-teal);
+  border:2px solid var(--lb-teal);
+  box-shadow:0 10px 26px rgba(20,176,182,.30);
+}
+.lb-fbanner-btn--primary:hover{
+  background:var(--lb-teal-dark);
+  border-color:var(--lb-teal-dark);
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(20,176,182,.40);
+}
+.lb-fbanner-btn--primary:hover svg{transform:translateX(4px);}
+
+.lb-fbanner-btn--ghost{
+  color:#fff;
+  background:rgba(255,255,255,.07);
+  border:2px solid rgba(255,255,255,.28);
+}
+.lb-fbanner-btn--ghost:hover{
+  background:rgba(255,255,255,.14);
+  border-color:var(--lb-teal);
+  color:#fff;
+  transform:translateY(-2px);
+}
+.lb-fbanner-btn:focus-visible{
+  outline:3px solid rgba(20,176,182,.55);
+  outline-offset:3px;
+}
+
+.lb-fbanner-call{
+  margin:4px 0 0;
+  text-align:center;
+  font-size:14.5px;
+  color:rgba(255,255,255,.6);
+}
+.lb-fbanner-call a{
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid rgba(20,176,182,.7);
+}
+.lb-fbanner-call a:hover{color:var(--lb-teal);}
+
+/* ---------- Trust strip ---------- */
+.lb-fbanner-trust{
+  list-style:none;
+  margin:clamp(30px,4vw,46px) 0 0;
+  padding:clamp(26px,3vw,34px) 0 0;
+  border-top:1px solid rgba(255,255,255,.14);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+  gap:24px 28px;
+}
+.lb-fbanner-trust-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0;
+}
+.lb-fbanner-ticon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  background:rgba(20,176,182,.16);
+  border:1px solid rgba(20,176,182,.30);
+  color:var(--lb-teal);
+}
+.lb-fbanner-ticon svg{width:23px;height:23px;display:block;}
+.lb-fbanner-tbody{display:flex;flex-direction:column;min-width:0;}
+.lb-fbanner-tlabel{
+  font-size:15.5px;
+  font-weight:700;
+  color:#fff;
+  line-height:1.35;
+}
+.lb-fbanner-ttext{
+  font-size:13.5px;
+  line-height:1.5;
+  color:rgba(255,255,255,.6);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .lb-fbanner-main{grid-template-columns:1fr;}
+  .lb-fbanner-actions{
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .lb-fbanner-btn{flex:1 1 200px;}
+  .lb-fbanner-call{flex:1 1 100%;text-align:left;margin-top:2px;}
+}
+@media (max-width:560px){
+  .lb-fbanner{font-size:16px;}
+  .lb-fbanner-actions{flex-direction:column;align-items:stretch;}
+  /* reset the row-mode flex basis, or it becomes a height in column mode */
+  .lb-fbanner-btn{flex:0 0 auto;width:100%;}
+  .lb-fbanner-call{flex:0 0 auto;text-align:center;}
+  .lb-fbanner-trust{gap:20px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .lb-fbanner-btn,
+  .lb-fbanner-btn svg{transition:none;}
+  .lb-fbanner-btn:hover{transform:none;}
+  .lb-fbanner-btn--primary:hover svg{transform:none;}
+}
+</style>

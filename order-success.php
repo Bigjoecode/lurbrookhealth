@@ -1,0 +1,5 @@
+<?php
+require __DIR__.'/bootstrap.php';$number=trim($_GET['order']??'');$stmt=$db->prepare('SELECT * FROM orders WHERE order_number=?');$stmt->execute([$number]);$order=$stmt->fetch();if(!$order)redirect('shop.php');$pageTitle='Order confirmed';require __DIR__.'/includes/header.php';
+?>
+<section class="section"><div class="container order-success"><div class="success-icon">✓</div><span class="eyebrow">Payment confirmed</span><h1 style="font-size:45px;color:var(--navy);margin:12px 0">Thank you for your order</h1><p>We have received order <strong><?= e($order['order_number']) ?></strong> and your PayPal payment of <strong><?= money((float)$order['total']) ?></strong> is complete.</p><p>A member of our team will process the order for delivery to <?= e($order['postcode']) ?>. Please retain your PayPal receipt for your records.</p><div class="button-row" style="justify-content:center;margin-top:28px"><a class="btn btn-dark" href="<?= url('shop.php') ?>">Continue shopping</a><a class="btn btn-outline" href="<?= url('contact.php?subject=Order '.$order['order_number']) ?>">Contact us</a></div></div></section>
+<?php require __DIR__.'/includes/footer.php'; ?>

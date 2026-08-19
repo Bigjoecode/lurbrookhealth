@@ -1,0 +1,15 @@
+<?php
+require __DIR__ . '/bootstrap.php';
+$pageTitle='Shop medical supplies'; $activePage='shop';
+$where=['active=1']; $params=[];
+if (!empty($_GET['category'])) { $where[]='category=?'; $params[]=$_GET['category']; }
+if (!empty($_GET['q'])) { $where[]='(name LIKE ? OR description LIKE ? OR sku LIKE ?)'; $term='%'.trim($_GET['q']).'%'; array_push($params,$term,$term,$term); }
+$sort = ['price_asc'=>'price ASC','price_desc'=>'price DESC','name'=>'name ASC'][$_GET['sort'] ?? ''] ?? 'featured DESC, id DESC';
+$stmt=$db->prepare('SELECT * FROM products WHERE '.implode(' AND ',$where).' ORDER BY '.$sort); $stmt->execute($params); $products=$stmt->fetchAll();
+$allCategories=$db->query('SELECT category,COUNT(*) total FROM products WHERE active=1 GROUP BY category ORDER BY category')->fetchAll();
+require __DIR__ . '/includes/header.php';
+?>
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="<?= url() ?>">Home</a> / Shop</div><span class="eyebrow">Lurbrook collections</span><h1><?= !empty($_GET['category'])?e($_GET['category']):'Medical & healthcare supplies' ?></h1><p>Quality-led products selected for reliable everyday care, professional settings and workplace wellbeing.</p></div></section>
+<section class="section"><div class="container shop-layout"><aside class="filters"><h3>Categories</h3><a class="<?= empty($_GET['category'])?'active':'' ?>" href="<?= url('shop.php') ?>"><span>All products</span><b><?= array_sum(array_column($allCategories,'total')) ?></b></a><?php foreach($allCategories as $cat): ?><a class="<?= ($_GET['category']??'')===$cat['category']?'active':'' ?>" href="<?= url('shop.php?category='.urlencode($cat['category'])) ?>"><span><?= e($cat['category']) ?></span><b><?= (int)$cat['total'] ?></b></a><?php endforeach; ?><br><h3>Need a larger quantity?</h3><p style="font-size:13px;color:var(--muted)">Ask our team about trade and wholesale supply.</p><a class="text-link" href="<?= url('contact.php?subject=Bulk order') ?>">Contact us →</a></aside><div class="shop-products"><div class="shop-top"><span><?= count($products) ?> product<?= count($products)===1?'':'s' ?> found</span><form><input type="hidden" name="category" value="<?= e($_GET['category']??'') ?>"><input type="hidden" name="q" value="<?= e($_GET['q']??'') ?>"><select name="sort" onchange="this.form.submit()"><option value="">Featured</option><option value="price_asc" <?= ($_GET['sort']??'')==='price_asc'?'selected':'' ?>>Price: low to high</option><option value="price_desc" <?= ($_GET['sort']??'')==='price_desc'?'selected':'' ?>>Price: high to low</option><option value="name" <?= ($_GET['sort']??'')==='name'?'selected':'' ?>>Name</option></select></form></div><?php if($products): ?><div class="product-grid"><?php foreach($products as $product) require __DIR__.'/includes/product-card.php'; ?></div><?php else: ?><div class="empty"><h2>No products found</h2><p>Try another search or browse all products.</p><a class="btn" href="<?= url('shop.php') ?>">Browse all products</a></div><?php endif; ?></div></div></section>
+<?php require __DIR__ . '/includes/footer.php'; ?>
+

@@ -1,0 +1,241 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Terms & Conditions
+     Paste this whole block into an Elementor "HTML" widget.
+     All styles are scoped to .lb-terms so nothing leaks
+     into the theme. Fonts are inherited from your Elementor
+     global typography.
+     ============================================================ -->
+
+<div class="lb-terms">
+
+  <span class="lb-updated">Last updated: 5 August 2026</span>
+
+  <p class="lb-lead">Welcome to the Lurbrook Health LTD website.</p>
+  <p class="lb-p">By using this website or placing an order, you agree to these Terms and Conditions.</p>
+
+  <nav class="lb-toc" aria-label="On this page">
+    <span class="lb-toc-title">On this page</span>
+    <ol class="lb-toc-list">
+      <li><a href="#lb-products">Products</a></li>
+      <li><a href="#lb-pricing">Pricing</a></li>
+      <li><a href="#lb-payment">Payment</a></li>
+      <li><a href="#lb-delivery">Delivery</a></li>
+      <li><a href="#lb-returns">Returns</a></li>
+      <li><a href="#lb-ip">Intellectual Property</a></li>
+      <li><a href="#lb-liability">Limitation of Liability</a></li>
+      <li><a href="#lb-law">Governing Law</a></li>
+    </ol>
+  </nav>
+
+  <h2 class="lb-h2" id="lb-products">Products</h2>
+  <p class="lb-p">We aim to ensure all product descriptions and images are accurate. However, product packaging and specifications may occasionally vary from those shown.</p>
+
+  <h2 class="lb-h2" id="lb-pricing">Pricing</h2>
+  <p class="lb-p">All prices are displayed in GBP (&pound;).</p>
+  <p class="lb-p">Prices may change without notice.</p>
+
+  <h2 class="lb-h2" id="lb-payment">Payment</h2>
+  <p class="lb-p">We accept:</p>
+  <ul class="lb-list">
+    <li>Visa</li>
+    <li>Mastercard</li>
+    <li>American Express</li>
+    <li>PayPal</li>
+    <li>Stripe</li>
+    <li>Bank Transfer (where applicable)</li>
+  </ul>
+  <p class="lb-p">Orders will only be processed once payment has been received.</p>
+
+  <h2 class="lb-h2" id="lb-delivery">Delivery</h2>
+  <p class="lb-p">We currently deliver within the United Kingdom.</p>
+  <p class="lb-p">Estimated delivery times are provided for guidance only and may vary.</p>
+
+  <h2 class="lb-h2" id="lb-returns">Returns</h2>
+  <p class="lb-p">If you receive a faulty or incorrect item, please contact us within <strong>14 days of delivery</strong>.</p>
+  <p class="lb-p">For hygiene reasons, certain products may not be eligible for return unless faulty.</p>
+  <p class="lb-p">Your statutory rights remain unaffected.</p>
+
+  <h2 class="lb-h2" id="lb-ip">Intellectual Property</h2>
+  <p class="lb-p">All content, logos, graphics and images on this website remain the property of Lurbrook Health LTD and agreed partners and may not be copied without written permission.</p>
+
+  <h2 class="lb-h2" id="lb-liability">Limitation of Liability</h2>
+  <p class="lb-p">Lurbrook Health LTD shall not be liable for indirect or consequential losses arising from the use of our website or products, except where required by law.</p>
+
+  <h2 class="lb-h2" id="lb-law">Governing Law</h2>
+  <p class="lb-p">These Terms are governed by the laws of England and Wales.</p>
+
+  <p class="lb-contact">
+    Questions about these terms? Contact us at
+    <a href="mailto:contact@lurbrookhealthltd.com">contact@lurbrookhealthltd.com</a>
+    or call <a href="tel:+447961076672">+44 7961 076672</a>.
+  </p>
+
+</div>
+
+<style>
+/* Scoped to .lb-terms - safe to paste alongside any theme */
+.lb-terms{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-mist:#D9E5E5;
+  --lb-ink:#2A3441;
+  --lb-muted:#5F6B7A;
+  --lb-line:#E3EAEA;
+
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--lb-ink);
+  background:#fff;
+  border:1px solid var(--lb-line);
+  border-radius:14px;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:0 2px 24px rgba(21,37,66,.05);
+}
+.lb-terms *{box-sizing:border-box;}
+
+.lb-terms .lb-updated{
+  display:inline-block;
+  font-size:13px;
+  line-height:1.4;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lb-teal-dark);
+  background:rgba(20,176,182,.09);
+  border:1px solid rgba(20,176,182,.28);
+  border-radius:999px;
+  padding:5px 14px;
+  margin:0 0 26px;
+}
+
+.lb-terms .lb-lead{
+  font-size:18.5px;
+  color:var(--lb-navy);
+  margin:0 0 12px;
+}
+
+.lb-terms .lb-h2{
+  font-family:inherit;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--lb-navy);
+  margin:36px 0 12px;
+  padding:0 0 10px;
+  border-bottom:2px solid var(--lb-mist);
+  letter-spacing:-.01em;
+  text-transform:none;
+  scroll-margin-top:120px; /* clears sticky headers on anchor jumps */
+}
+
+.lb-terms .lb-p{
+  margin:0 0 16px;
+  color:var(--lb-ink);
+}
+.lb-terms .lb-p:last-child{margin-bottom:0;}
+.lb-terms .lb-p strong{color:var(--lb-navy);}
+
+/* ---- Table of contents ---- */
+.lb-terms .lb-toc{
+  background:#F7FAFA;
+  border:1px solid var(--lb-line);
+  border-radius:12px;
+  padding:22px 26px;
+  margin:26px 0 8px;
+}
+.lb-terms .lb-toc-title{
+  display:block;
+  font-size:12.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--lb-muted);
+  margin-bottom:12px;
+}
+.lb-terms .lb-toc-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  counter-reset:lb-toc;
+  columns:2;
+  column-gap:32px;
+}
+.lb-terms .lb-toc-list li{
+  counter-increment:lb-toc;
+  margin:0 0 7px;
+  break-inside:avoid;
+  font-size:15.5px;
+}
+.lb-terms .lb-toc-list li::before{
+  content:counter(lb-toc) ".";
+  color:var(--lb-teal);
+  font-weight:700;
+  margin-right:8px;
+}
+.lb-terms .lb-toc-list a{
+  color:var(--lb-navy);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.lb-terms .lb-toc-list a:hover{
+  color:var(--lb-teal-dark);
+  border-bottom-color:var(--lb-teal);
+}
+
+/* ---- Bulleted lists ---- */
+.lb-terms .lb-list{
+  list-style:none;
+  margin:0 0 16px;
+  padding:0;
+}
+.lb-terms .lb-list li{
+  position:relative;
+  margin:0 0 10px;
+  padding:0 0 0 30px;
+  color:var(--lb-ink);
+}
+.lb-terms .lb-list li:last-child{margin-bottom:0;}
+.lb-terms .lb-list li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:.62em;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--lb-teal);
+  box-shadow:0 0 0 4px rgba(20,176,182,.15);
+}
+
+.lb-terms .lb-notice{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:28px 0 0;
+}
+.lb-terms .lb-notice strong{color:var(--lb-navy);}
+
+.lb-terms .lb-contact{
+  margin:36px 0 0;
+  padding:26px 0 0;
+  border-top:1px solid var(--lb-line);
+  font-size:15.5px;
+  color:var(--lb-muted);
+}
+.lb-terms .lb-contact a{
+  color:var(--lb-teal-dark);
+  font-weight:600;
+  text-decoration:none;
+}
+.lb-terms .lb-contact a:hover{text-decoration:underline;}
+
+@media (max-width:640px){
+  .lb-terms{font-size:16px;border-radius:10px;}
+  .lb-terms .lb-lead{font-size:17.5px;}
+  .lb-terms .lb-h2{font-size:19px;margin-top:30px;}
+  .lb-terms .lb-toc-list{columns:1;}
+  .lb-terms .lb-toc{padding:18px 20px;}
+}
+</style>

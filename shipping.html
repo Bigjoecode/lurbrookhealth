@@ -1,0 +1,151 @@
+<!-- ============================================================
+     LURBROOK HEALTH - Shipping Policy
+     Paste this whole block into an Elementor "HTML" widget.
+     All styles are scoped to .lb-shipping so nothing leaks
+     into the theme. Fonts are inherited from your Elementor
+     global typography.
+     ============================================================ -->
+
+<div class="lb-shipping">
+
+  <span class="lb-updated">Last updated: 5 August 2026</span>
+
+  <p class="lb-lead">We currently ship to addresses within the United Kingdom.</p>
+
+  <h2 class="lb-h2">Order processing</h2>
+  <p class="lb-p">Orders are usually processed within <strong>1&ndash;2 working days</strong>.</p>
+
+  <h2 class="lb-h2">Delivery times</h2>
+  <p class="lb-p">Delivery times may vary depending on courier availability.</p>
+
+  <h2 class="lb-h2">Tracking your order</h2>
+  <p class="lb-p">Once your order has been dispatched, you will receive tracking information where available.</p>
+
+  <div class="lb-notice">
+    <p class="lb-p"><strong>Please note:</strong> processing time is separate from delivery time. Your total wait is the time we take to prepare the order plus the time the courier takes to deliver it.</p>
+  </div>
+
+  <p class="lb-contact">
+    Questions about your delivery? Contact us at
+    <a href="mailto:contact@lurbrookhealthltd.com">contact@lurbrookhealthltd.com</a>
+    or call <a href="tel:+447961076672">+44 7961 076672</a>.
+  </p>
+
+</div>
+
+<style>
+/* Scoped to .lb-shipping - safe to paste alongside any theme */
+.lb-shipping{
+  --lb-teal:#14B0B6;
+  --lb-teal-dark:#0E8B90;
+  --lb-navy:#152542;
+  --lb-mist:#D9E5E5;
+  --lb-ink:#2A3441;
+  --lb-muted:#5F6B7A;
+  --lb-line:#E3EAEA;
+
+  font-family:inherit;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--lb-ink);
+  background:#fff;
+  border:1px solid var(--lb-line);
+  border-radius:14px;
+  padding:clamp(24px,5vw,52px);
+  box-shadow:0 2px 24px rgba(21,37,66,.05);
+}
+.lb-shipping *{box-sizing:border-box;}
+
+.lb-shipping .lb-updated{
+  display:inline-block;
+  font-size:13px;
+  line-height:1.4;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--lb-teal-dark);
+  background:rgba(20,176,182,.09);
+  border:1px solid rgba(20,176,182,.28);
+  border-radius:999px;
+  padding:5px 14px;
+  margin:0 0 26px;
+}
+
+.lb-shipping .lb-lead{
+  font-size:18.5px;
+  color:var(--lb-navy);
+  margin:0 0 8px;
+}
+
+.lb-shipping .lb-h2{
+  font-family:inherit;
+  font-size:21px;
+  font-weight:700;
+  line-height:1.3;
+  color:var(--lb-navy);
+  margin:36px 0 12px;
+  padding:0 0 10px;
+  border-bottom:2px solid var(--lb-mist);
+  letter-spacing:-.01em;
+  text-transform:none;
+}
+
+.lb-shipping .lb-p{
+  margin:0 0 16px;
+  color:var(--lb-ink);
+}
+.lb-shipping .lb-p:last-child{margin-bottom:0;}
+.lb-shipping .lb-p strong{color:var(--lb-navy);}
+
+.lb-shipping .lb-list{
+  list-style:none;
+  margin:0 0 16px;
+  padding:0;
+}
+.lb-shipping .lb-list li{
+  position:relative;
+  margin:0 0 10px;
+  padding:0 0 0 30px;
+  color:var(--lb-ink);
+}
+.lb-shipping .lb-list li:last-child{margin-bottom:0;}
+.lb-shipping .lb-list li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:.62em;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--lb-teal);
+  box-shadow:0 0 0 4px rgba(20,176,182,.15);
+}
+
+.lb-shipping .lb-notice{
+  border-left:4px solid var(--lb-teal);
+  background:#F1FAFA;
+  border-radius:0 10px 10px 0;
+  padding:20px 24px;
+  margin:28px 0 0;
+}
+.lb-shipping .lb-notice strong{color:var(--lb-navy);}
+
+.lb-shipping .lb-contact{
+  margin:36px 0 0;
+  padding:26px 0 0;
+  border-top:1px solid var(--lb-line);
+  font-size:15.5px;
+  color:var(--lb-muted);
+}
+.lb-shipping .lb-contact a{
+  color:var(--lb-teal-dark);
+  font-weight:600;
+  text-decoration:none;
+}
+.lb-shipping .lb-contact a:hover{text-decoration:underline;}
+
+@media (max-width:640px){
+  .lb-shipping{font-size:16px;border-radius:10px;}
+  .lb-shipping .lb-lead{font-size:17.5px;}
+  .lb-shipping .lb-h2{font-size:19px;margin-top:30px;}
+}
+</style>

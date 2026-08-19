@@ -1,0 +1,5 @@
+/data/*.sqlite
+/data/sessions/
+/uploads/*
+!/uploads/.gitkeep
+/.env

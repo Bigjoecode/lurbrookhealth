@@ -1,0 +1,8 @@
+<?php
+require dirname(__DIR__).'/bootstrap.php';
+if(is_admin())redirect('admin/');
+$error='';
+if($_SERVER['REQUEST_METHOD']==='POST'){verify_csrf();$email=strtolower(trim($_POST['email']??''));$password=(string)($_POST['password']??'');if(hash_equals(strtolower($config['admin_email']),$email)&&hash_equals($config['admin_password'],$password)){session_regenerate_id(true);$_SESSION['admin']=['email'=>$email,'login_at'=>time()];redirect('admin/');}$error='Email or password is incorrect.';}
+?>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin sign in | Lurbrook Health</title><link rel="stylesheet" href="<?= url('assets/css/admin.css') ?>"></head><body class="login-body"><main class="login-shell"><section class="login-brand"><img src="<?= url('assets/img/logo.png') ?>" alt="Lurbrook Health"><div><span>Store administration</span><h1>Healthcare commerce, beautifully managed.</h1><p>Products, stock, orders, enquiries and website content—all in one secure workspace.</p></div></section><section class="login-card"><span class="admin-eyebrow">Welcome back</span><h2>Sign in to the dashboard</h2><p>Use your administrator credentials to continue.</p><?php if($error): ?><div class="admin-alert error"><?= e($error) ?></div><?php endif; ?><form method="post"><input type="hidden" name="csrf" value="<?= csrf_token() ?>"><label>Email address<input type="email" name="email" required autocomplete="username"></label><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button type="submit">Sign in securely →</button></form><a class="back-link" href="<?= url() ?>">← Back to the shop</a></section></main></body></html>
+

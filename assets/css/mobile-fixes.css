@@ -1,0 +1,27 @@
+body { overflow-x: hidden; }
+.hero-copy { min-width: 0; }
+
+@media (max-width: 740px) {
+  .header-main {
+    height: auto;
+    min-height: 78px;
+    padding: 9px 0;
+    row-gap: 8px;
+    grid-template-columns: minmax(0, 1fr) 65px;
+  }
+  .brand { grid-column: 1; grid-row: 1; }
+  .header-actions { grid-column: 2; grid-row: 1; }
+  .header-actions .cart-link { display: flex; }
+  .menu-toggle { grid-column: 1 / -1; grid-row: 2; width: 100%; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy,
+  .hero-media { width: 100%; max-width: 100%; min-width: 0; }
+  .hero-copy h1,
+  .hero-copy p { max-width: 100%; overflow-wrap: break-word; }
+}
+
+@media (max-width: 480px) {
+  .hero-copy h1 { font-size: 34px; }
+  .hero .button-row { display: grid; grid-template-columns: 1fr; }
+  .hero .button-row .btn { width: 100%; }
+}

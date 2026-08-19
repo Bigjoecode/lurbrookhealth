@@ -1,0 +1,11 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<FilesMatch "^(bootstrap|config)\.php$">
+  Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^(?:data|includes)/ - [F,L]
+RewriteRule ^product/([a-z0-9-]+)/?$ product.php?slug=$1 [L,QSA]
+RewriteRule ^page/([a-z0-9-]+)/?$ page.php?slug=$1 [L,QSA]
